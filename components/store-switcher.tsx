@@ -65,7 +65,7 @@ const StoreSwitcher = ({ className, items = [] }: StoreSwitcherProps) => {
           className={cn('w-[200px] justify-between', className)}
         >
           <StoreIcon className="mr-2 h-4 w-4" />
-          Current Store
+          {currentStore?.label}
           <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -80,7 +80,7 @@ const StoreSwitcher = ({ className, items = [] }: StoreSwitcherProps) => {
                   key={store.value}
                   value={store.value}
                   onSelect={() => onStoreSelect(store)}
-                  className="flex items-center justify-between cursor-pointer hover:bg-accent hover:text-accent-foreground"
+                  className="flex items-center justify-between cursor-pointer hover:bg-accent hover:text-accent-foreground px-2"
                 >
                   <StoreIcon className="mr-2 h-4 w-4" />
                   {store.label}
@@ -100,7 +100,7 @@ const StoreSwitcher = ({ className, items = [] }: StoreSwitcherProps) => {
           <CommandList>
             <CommandGroup>
               <CommandItem
-                className="flex items-center text-sm p-1"
+                className="flex items-center text-sm p-[6px]"
                 onSelect={() => {
                   setOpen(false)
                   storeModal.onOpen()
