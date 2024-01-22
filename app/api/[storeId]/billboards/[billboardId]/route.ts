@@ -11,7 +11,7 @@ export async function GET(
       return new NextResponse('billboard id is required', { status: 400 })
     }
 
-    const billBoard = await prismadb.store.findUnique({
+    const billBoard = await prismadb.billBoard.findUnique({
       where: {
         id: params.billboardId,
       },
