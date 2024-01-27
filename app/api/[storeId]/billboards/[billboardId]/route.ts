@@ -19,7 +19,7 @@ export async function GET(
 
     return NextResponse.json(billBoard)
   } catch (error) {
-    console.log('[GET_DELETE]', error)
+    console.log('[GET_BILLBOARD]', error)
     return new NextResponse('Intenal error', { status: 500 })
   }
 }
